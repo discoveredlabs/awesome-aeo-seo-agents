@@ -9,3 +9,18 @@ The second structural advantage: AI search citation behavior responds to content
 The third advantage: the pipeline is composable. MCP servers expose SEO data, skill packages handle routing and execution, content agents generate and rewrite, and monitoring agents measure output - all connectable without custom integration code. The architecture exists now; this list documents the components.
 
 Discovered Labs maintains an internal MCP server wrapping their AEO research tools - prompt hygiene checks, citation auditing, Reddit opportunity scoring, and live engine querying - available inside Claude Desktop and Cursor for teams on their research platform. No public repository.
+
+## Contents
+
+- [How Agentic Search Works](#how-agentic-search-works)
+- [Agentic GEO Frameworks](#agentic-geo-frameworks)
+- [MCP Servers for SEO & AEO Data](#mcp-servers-for-seo--aeo-data)
+- [Agent Skill Frameworks](#agent-skill-frameworks)
+- [Content Generation & Research Automation](#content-generation--research-automation)
+- [Agentic Browsing & AI Crawler Compatibility](#agentic-browsing--ai-crawler-compatibility)
+- [Prompt Engineering for AI Visibility](#prompt-engineering-for-ai-visibility)
+- [Continuous Learning & Future Optimization Surfaces](#continuous-learning--future-optimization-surfaces)
+- [Related Lists](#related-lists)
+- [Contributing](#contributing)
+
+---
