@@ -24,3 +24,43 @@ Discovered Labs maintains an internal MCP server wrapping their AEO research too
 - [Contributing](#contributing)
 
 ---
+
+## How Agentic Search Works
+
+Engineers building optimization pipelines for agentic search need to understand how AI agents retrieve, decide, and cite before writing a line of optimization code. These papers establish the mechanics that determine what content signals reach the model and which are discarded upstream.
+
+- [LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know?](https://arxiv.org/abs/2605.28721) - Demonstrates that ~45% of questions are answered without triggering a web search and that agent queries are generated from internal model hypotheses rather than retrieved evidence, meaning content must match the model's internal framing of a topic - not just the user's surface query - to be surfaced.
+
+- [Navigating Uncertainty: Optimizing API Dependency for Hallucination Reduction](https://arxiv.org/abs/2401.01780) - Shows that LLMs trigger external web retrieval for only 62% of queries, bypassing live-web content entirely for topics well-covered in training data, which is the determinant of which content categories benefit from live-web AEO at all.
+
+- [Uncertainty-Aware Web-Conditioned Scientific Fact-Checking](https://arxiv.org/abs/2604.11036) - Establishes that retrieval pipelines fire via atomic claim decomposition only when internal confidence on a specific claim is insufficient, providing the content strategy framework for targeting the knowledge gaps where live-web retrieval is guaranteed.
+
+- [MCP vs RAG vs NLWeb vs HTML](https://arxiv.org/abs/2511.23281) - RAG outperforms raw HTML, API endpoints, and natural-language web interfaces for AI agent retrieval on both accuracy and efficiency, establishing the architectural decision guide for how to expose content to agents - structured data feeds and semantic APIs beat traditional web pages.
+
+- [Prism-Reranker: Beyond Relevance Scoring](https://arxiv.org/abs/2604.23734) - Next-generation rerankers emit contribution summaries and evidence passages rather than simple relevance scores, rewarding content structured to make its distinctive contribution explicit through clear headings, specific claims, and summary statements that a reranker can extract and cite.
+
+- [EcoGEO: Trajectory-Aware Evidence Ecosystems](https://arxiv.org/abs/2605.12887) - Reframes GEO as an environment-level influence problem for agentic search, demonstrating that trajectory-aware coordination of navigation pages and support pages outperforms per-document optimization for agent-based search engines that browse rather than retrieve.
+
+- [The Synthetic Web: Adversarially-Curated Mini-Internets](https://arxiv.org/abs/2603.00801) - Shows that a single top-ranked adversarial source overrides unlimited truthful alternatives and that models rarely escalate search when facing contradictory signals, confirming that achieving top-ranked retrieval status has disproportionate impact for legitimate AEO.
+
+### Discovered Labs: Engine Architecture Analysis
+
+- [How ChatGPT Uses Reciprocal Rank Fusion for AI Citations](https://discoveredlabs.com/blog/how-chatgpt-uses-reciprocal-rank-fusion-for-ai-citations) - Extracted code-level RRF parameters (`rrf_alpha: 1`, `rrf_input_threshold: 0`, `k=60`) from ChatGPT's retrieval pipeline: consistent mid-list presence across BM25 and vector retrieval outperforms high rank in one method alone - the key optimization target for agentic pipelines building citations at scale.
+
+- [How Gemini Works: AI Agent Architecture Deep Dive](https://discoveredlabs.com/blog/how-gemini-works-ai-agent-architecture-deepdive) - 227 RPC calls across 28 methods per session, 138 active feature flags, six query routing modes (Default, Agent, Deep Research, Deep Think, Canvas, Gempix), and 161 long-polling Signaler connections; structured data and entity relationships influence citation decisions at the session level, not the document level.
+
+- [How Google AI Overviews Works](https://discoveredlabs.com/blog/how-google-ai-overviews-works) - Five-phase pipeline timing (495ms initial HTML, 200ms retrieval, 1,200ms LLM synthesis); passage-level retrieval is scored independently of organic rank - the key reason agentic content audits must test retrieval behavior separately from rank checks.
+
+- [How Google AI Mode Works](https://discoveredlabs.com/blog/how-google-ai-mode-works) - 816 simultaneous active experiments and five distinct backend routing paths: content must survive multiple routing configurations to be reliably cited across AI Mode sessions, making single-pass agentic optimization insufficient.
+
+- [How ChatGPT Shopping Works and Where Ads Fit In](https://discoveredlabs.com/blog/how-chatgpt-shopping-works-and-where-ads-fit-in) - The "Sonic" query classifier (0.1ms) gates which queries enter the shopping pipeline; understanding commercial classification thresholds informs how agentic SEO pipelines should route commercial vs. informational content optimization.
+
+- [Why AI Visibility Trackers Are Not Measuring What You Think They Are](https://discoveredlabs.com/blog/ai-tracking-platforms-test-flaw) - Incognito mode testing lacks web search tools available to logged-in users; domains showing 0% citation rate in incognito show 5–8% under real conditions - the measurement baseline any agentic monitoring pipeline must account for.
+
+- [The Scientific Method for AEO: How to Model, Test, and Win AI Search](https://discoveredlabs.com/blog/how-to-model-test-win-ai-search-for-your-brand) - Single-variable controlled testing framework with intelligent resampling, clustered standard errors, and power analysis across 100+ prompts - the experimental design pattern for agentic test-and-iterate optimization loops.
+
+- [How AI Search Grounding Actually Works: Google vs OpenAI vs Anthropic](https://dejan.ai/blog/grounding/) - Same query across three platforms: Google retrieves 7 pages and cites 7 (1:1), OpenAI retrieves 39 and cites 2 (20:1 filtering), Anthropic reads 14 and cites 9 with visibility into rejected sources; agentic pipelines querying multiple engines to measure citation rates are operating against structurally incompatible citation architectures and must normalize accordingly.
+
+- [LLM Knowledge Cutoff Dates: Every Major Model Fact-Checked](https://metehan.ai/articles/llm-knowledge-cutoff-dates) - Verified cutoffs across GPT-4o (Oct 2023), GPT-5 (Sep 2024-Dec 2025), Claude Fable 5/Opus 4.8 (Jan 2026), Gemini 3.5 Flash (Jan 2025 - stale despite May 2026 release); the reference for agentic pipelines routing live-web retrieval selectively: topics inside cutoff don't trigger retrieval and won't benefit from AEO, topics outside cutoff are guaranteed retrieval targets.
+
+---
