@@ -64,3 +64,21 @@ Engineers building optimization pipelines for agentic search need to understand 
 - [LLM Knowledge Cutoff Dates: Every Major Model Fact-Checked](https://metehan.ai/articles/llm-knowledge-cutoff-dates) - Verified cutoffs across GPT-4o (Oct 2023), GPT-5 (Sep 2024-Dec 2025), Claude Fable 5/Opus 4.8 (Jan 2026), Gemini 3.5 Flash (Jan 2025 - stale despite May 2026 release); the reference for agentic pipelines routing live-web retrieval selectively: topics inside cutoff don't trigger retrieval and won't benefit from AEO, topics outside cutoff are guaranteed retrieval targets.
 
 ---
+
+## Agentic GEO Frameworks
+
+Academic systems that frame GEO as a multi-step agentic optimization problem. These are the reference implementations for engineers building production optimization pipelines - most include or link to code.
+
+- [MAGEO: Multi-Agent GEO via Reusable Strategy Learning](https://arxiv.org/abs/2604.19516) (ACL 2026) - Multi-agent framework that learns and reuses engine-specific editing strategies across documents rather than per-instance optimization, outperforming 14 baselines across 3 engines; introduces the DSV-CF metric jointly measuring semantic visibility and citation fidelity, exposing that pure visibility gains can damage attribution accuracy.
+
+- [AgenticGEO: A Self-Evolving Agentic System](https://arxiv.org/abs/2603.20213) - Frames GEO as a content-conditioned control problem using a MAP-Elites archive with a co-evolving surrogate critic to evolve diverse optimization strategies, substantially reducing expensive real engine queries during strategy search while achieving cross-domain transferability across 3 datasets and 14 baselines.
+
+- [AutoGEO](https://github.com/cxcscmu/AutoGEO) - Python, 177 stars. ICLR 2026. Extracts content preferences directly from generative engines (Gemini, GPT, Claude) and rewrites documents to improve AI citation rates via AutoGEOAPI (prompt-based) and AutoGEOMini (RL-trained); the open-source reference implementation for automated engine preference extraction.
+
+- [GEO original research repo](https://github.com/GEO-optim/GEO) - Python, 293 stars. The reference implementation from the KDD 2024 paper that named the field, including GEO-BENCH dataset, custom optimization function framework, and leaderboard; essential for engineers wanting to verify GEO claims against controlled experimental conditions.
+
+- [EcoGEO: Trajectory-Aware Evidence Ecosystems](https://arxiv.org/abs/2605.12887) - The most forward-looking agentic optimization framework documented here, moving from individual document editing to coordinated web-environment shaping via TRACE, which orchestrates navigation pages and support pages to guide agent browsing trajectories rather than targeting single documents.
+
+- [geo-optimizer](https://github.com/geo-team-red/geo-optimizer) - Go, ~200 stars. Pluggable GEO framework with modular architecture for building engine-specific optimization pipelines; the Go-native foundation for teams that need composability rather than a fixed-function tool.
+
+---
