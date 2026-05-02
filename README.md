@@ -82,3 +82,35 @@ Academic systems that frame GEO as a multi-step agentic optimization problem. Th
 - [geo-optimizer](https://github.com/geo-team-red/geo-optimizer) - Go, ~200 stars. Pluggable GEO framework with modular architecture for building engine-specific optimization pipelines; the Go-native foundation for teams that need composability rather than a fixed-function tool.
 
 ---
+
+## MCP Servers for SEO & AEO Data
+
+MCP servers exposing SEO and AI visibility data to AI coding assistants and agent pipelines. These are composable building blocks - assemble them into automated workflows connecting data sources to optimization loops without custom integration code.
+
+- [open-seo](https://github.com/every-app/open-seo) - TypeScript, 3.1K stars. Open-source SEO platform exposing keyword research, rank tracking, competitor analysis, backlink analysis, and site audits via a full MCP interface; self-hostable via Docker or Cloudflare with optional GSC integration and DataForSEO APIs.
+
+- [canonry](https://github.com/Canonry/canonry) - TypeScript, 71 stars. Self-hostable AEO monitoring platform with 67 MCP tools for Claude Desktop, covering citation tracking across Gemini, ChatGPT, Claude, and Perplexity; ingests server logs from Cloud Run, Vercel, and WordPress; integrates GSC, GA4, and Bing Webmaster Tools; and discovers backlinks via Common Crawl using local DuckDB.
+
+- [ai-brand-monitor-mcp](https://github.com/khadinakbarlabs/ai-brand-monitor-mcp) - TypeScript, 56 stars, MIT. MCP server tracking brand visibility across Perplexity, ChatGPT, Claude, and Gemini from inside any MCP-compatible agent, with domain citation detection, competitor co-mention analysis, and a 0-100 GEO visibility score with actionable recommendations.
+
+- [dataforseo-mcp-server](https://github.com/dataforseo/mcp-server-typescript) - TypeScript. Official DataForSEO MCP server exposing SERP results, keyword metrics, backlink data, and site audit endpoints; the authoritative integration point for agent pipelines using DataForSEO APIs.
+
+- [seo-mcp](https://github.com/cnych/seo-mcp) - Python, 248 stars. Free MCP powered by Ahrefs public data for backlink analysis, keyword ideas, traffic estimation, and domain metrics, with automatic CAPTCHA solving and response caching requiring no paid API key for the free tier.
+
+- [dataseo-mcp](https://github.com/egebese/dataseo-mcp) - Python, 184 stars. Ahrefs data APIs via MCP for keyword research, backlink analysis, competitor insights, and SERP data; designed to compose with OpenRouter for multi-step query planning in agent workflows.
+
+- [mcp-gsc](https://github.com/AminForou/mcp-gsc) - Python. Google Search Console MCP compatible with Claude Desktop, Cursor, Codex CLI, Gemini CLI, and any MCP-compatible client, surfacing keyword rankings, CTR trends, coverage issues, and AI Overview visibility signals in natural language.
+
+- [google-search-console-mcp](https://github.com/surendranb/google-search-console-mcp) - TypeScript. GSC MCP for Claude, Cursor, and Windsurf with query interfaces designed around AI Overviews and conversational search trends rather than traditional rank-tracking framing.
+
+- [search-console-mcp](https://github.com/saurabhsharma2u/search-console-mcp) - Python. Combines Google Search Console, Bing Webmaster Tools, and GA4 in a single MCP interface for AI agents and automation pipelines, eliminating separate authentication and context-switching across data sources.
+
+- [seo-skills (SE Ranking)](https://github.com/seranking/seo-skills) - Python, ~77 stars. Production-ready Claude Agent Skills for the SE Ranking MCP server covering keyword research, rank tracking, site audit, and backlink data through natural language workflow prompts.
+
+- [seo-insights-mcp-server](https://github.com/mrgoonie/seo-insights-mcp-server) - TypeScript. SEO insights MCP covering backlink analysis, keyword research, and traffic analysis with an extensible structure designed for composition into larger agent workflows.
+
+- [mcp-seo-marketing](https://github.com/ezbiz-services/mcp-seo-marketing) - TypeScript. AI-powered SEO and marketing intelligence MCP covering keyword research, SERP analysis, backlink checking, and on-page signals including keyword density, readability, structure, and meta tags.
+
+**Note:** Discovered Labs maintains an internal MCP server available inside Claude Desktop and Cursor for AEO-specific workflows - prompt hygiene checks, citation auditing, Reddit opportunity scoring, and live engine querying. No public repository.
+
+---
