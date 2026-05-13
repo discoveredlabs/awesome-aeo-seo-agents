@@ -114,3 +114,23 @@ MCP servers exposing SEO and AI visibility data to AI coding assistants and agen
 **Note:** Discovered Labs maintains an internal MCP server available inside Claude Desktop and Cursor for AEO-specific workflows - prompt hygiene checks, citation auditing, Reddit opportunity scoring, and live engine querying. No public repository.
 
 ---
+
+## Agent Skill Frameworks
+
+Pre-built skill packages installable into AI coding assistants for SEO and GEO capabilities without building from scratch. Evaluated on sub-skill count, platform compatibility, GEO/AEO depth, and automation surface area.
+
+- [claude-seo](https://github.com/AgriciDaniel/claude-seo) - Python, 9.9K stars, MIT. The most complete SEO agent skill package available: 25+ sub-skills and 18 specialist agents covering technical SEO, E-E-A-T, Schema.org (30+ types), GEO/AEO via `/seo geo`, backlinks, local SEO, semantic clustering, e-commerce, and international SEO; SPA-aware via Playwright; optional Firecrawl and DataForSEO MCP extensions.
+
+- [seo-geo-claude-skills](https://github.com/aaron-he-zhu/seo-geo-claude-skills) - Python, 2.3K stars. Twenty SEO and GEO skills for Claude Code, Cursor, Codex, and 35+ AI agent platforms, providing the broadest platform compatibility in this list for teams requiring cross-platform deployment.
+
+- [codex-seo](https://github.com/AgriciDaniel/codex-seo) - Python, 322 stars. Twenty-six end-to-end workflows and 24 TOML agents designed for autonomous operation in Codex and Claude Code CI environments, the best option for teams running Codex CLI in automated pipelines.
+
+- [Agentic-SEO-Skill](https://github.com/Bhanunamikaze/Agentic-SEO-Skill) - Python. Sixteen specialized sub-skills, 10 specialist agents, and 88 optional utility scripts functioning as evidence collectors, producing structured reports and action plans; compatible with Claude Code, Codex, Cursor, Windsurf, and Cline.
+
+- [recomby-geo](https://github.com/ViryaZheng/recomby-geo) - Python, 522 stars. GEO-specific skills package combined with curated agent configuration lists across multiple platforms, optimized for teams prioritizing GEO depth over broad technical SEO coverage.
+
+- [NotFair](https://github.com/nowork-studio/NotFair) - TypeScript, 3K stars. Claude Code skills covering SEO, GEO, Google Ads, and Meta Ads via agent-native commands, useful for teams wanting cross-channel marketing automation including AI search visibility in a single skill package.
+
+- [web-analytics-agent-skill](https://github.com/SeoToolkit/web-analytics-agent-skill) - Python, 19 stars. Connects GSC, GA4, and Bing Webmaster APIs directly to Claude Code and compatible agents, surfacing keyword performance, crawl errors, click data, and analytics metrics in natural language as an essential data-layer skill for any automated SEO workflow.
+
+---
