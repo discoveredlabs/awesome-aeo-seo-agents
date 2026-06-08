@@ -134,3 +134,27 @@ Pre-built skill packages installable into AI coding assistants for SEO and GEO c
 - [web-analytics-agent-skill](https://github.com/SeoToolkit/web-analytics-agent-skill) - Python, 19 stars. Connects GSC, GA4, and Bing Webmaster APIs directly to Claude Code and compatible agents, surfacing keyword performance, crawl errors, click data, and analytics metrics in natural language as an essential data-layer skill for any automated SEO workflow.
 
 ---
+
+## Content Generation & Research Automation
+
+Agentic systems automating content creation, competitive research, and gap analysis as components of AEO workflows. The highest-value automation loop: identify a citation gap, generate content targeting it, measure citation rate, iterate.
+
+- [seobuild-onpage](https://github.com/gbessoni/seobuild-onpage) - Python, 218 stars, MIT. Full page generation pipeline that pulls live SERP data, analyzes top competitors, extracts People Also Ask data, identifies content gaps, and writes structured pages with FAQ sections and schema markup; runs a 55-point post-generation quality checklist and explicitly targets AI Overviews and Perplexity citation as output success criteria.
+
+- [Lil'Log: LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) - Lilian Weng's canonical post on agent architecture covering planning, memory, tool use, and action modules; the conceptual framework for designing agentic AEO pipelines where citation monitoring, content rewriting, and live re-testing are autonomous agent behaviors rather than manual workflows.
+
+- [gpt-researcher](https://github.com/assafelovic/gpt-researcher) - Python, 27,900 stars. Autonomous deep research agent that plans queries, searches, scrapes, and synthesizes cited reports; the standard infrastructure for producing citation-worthy original research assets, which the empirical evidence consistently shows dominates AI citation rates over reformatted commodity content.
+
+- [firecrawl](https://github.com/firecrawl/firecrawl) - TypeScript, 30,000+ stars. Converts any URL to clean LLM-ready Markdown or structured JSON with dynamic page support, batch crawling, and site mapping; the de facto standard infrastructure layer for competitive content intelligence, knowledge base construction, and SERP data extraction in multi-agent SEO pipelines.
+
+- [Discovered Labs: Heading Optimizer](https://discoveredlabs.com/tools/heading-optimizer) - Free tool. Generates 10+ heading variants, ranks them via pairwise tournament comparison using log probabilities with beam search refinement, and outputs a Pareto-optimal ranked list trading AI citation preference against Flesch-Kincaid readability - the agent-native alternative to rule-based heading scoring.
+
+- [Reverse-Engineering the GPT-5 Tokenizer for AEO/GEO](https://metehan.ai/blog/reverse-engineering-the-gpt-5-tokenizer-aeo-geo) - 200,019 token analysis of o200k_base: plain prose achieves 2.2x better retrieval density than markdown tables (5.9 vs. 2.7 chars/token); numerals, common abbreviations, and answer-first structure maximize context-window efficiency; directly informs the output format configuration for agentic content generation pipelines to maximize citation yield per token.
+
+- [CITABLE: The AEO Content Framework](https://discoveredlabs.com/blog/citable-the-aeo-content-framework-we-use-to-get-b2b-brands-cited-by-ai) - Seven-dimension scoring model used by the AEO Content Evaluator: Clear entity and structure, Intent architecture (primary and adjacent query coverage), Third-party validation, Answer grounding (verifiable sourced facts), Block-structured for RAG (200-400 word sections), Latest and consistent, Entity graph and schema (JSON-LD); the practitioner reference for what agentic content generation agents should optimize toward before scoring with the evaluator.
+
+- [Discovered Labs: AEO Content Evaluator](https://discoveredlabs.com/tools/aeo-content-evaluator) - Free tool. Scores pasted content up to 15,000 characters across seven CITABLE dimensions - Semantic Clarity, Citation & Answer Analysis, RAG Optimization, Third-party Validation, Intent Architecture, Freshness & Consistency, and AI Detection - outputting an overall readiness score, strength/weakness breakdown, and prioritized improvement recommendations; the per-document scoring step in agentic content optimization loops where agents draft, score, rewrite, and re-score in sequence.
+
+- [Discovered Labs: LLM Eval Calculator](https://discoveredlabs.com/tools/llm-eval-calculator) - Free tool. Calculates the statistically required sample size for measuring brand mention rates across AI platforms; uniquely accounts for both between-question variance (different prompts yield different mention rates) and within-question variance (LLM stochasticity across runs of the same prompt); outputs unique prompts required, total API calls, and time estimates given a confidence level (90/95/99%), margin of error (0.5-5%), and resamples per prompt K (1-20) - the planning tool for agents running their own AEO measurement studies.
+
+---
