@@ -158,3 +158,78 @@ Agentic systems automating content creation, competitive research, and gap analy
 - [Discovered Labs: LLM Eval Calculator](https://discoveredlabs.com/tools/llm-eval-calculator) - Free tool. Calculates the statistically required sample size for measuring brand mention rates across AI platforms; uniquely accounts for both between-question variance (different prompts yield different mention rates) and within-question variance (LLM stochasticity across runs of the same prompt); outputs unique prompts required, total API calls, and time estimates given a confidence level (90/95/99%), margin of error (0.5-5%), and resamples per prompt K (1-20) - the planning tool for agents running their own AEO measurement studies.
 
 ---
+
+## Agentic Browsing & AI Crawler Compatibility
+
+Configuring sites so AI agents can effectively navigate, parse, and use content. This is the upstream requirement: if an agent cannot cleanly extract your content, no optimization downstream compensates for it.
+
+- [WebMCP W3C Community Group Draft](https://github.com/webmachinelearning/webmcp) - Spec authored by Microsoft (Brandon Walderman) and Google (Khushal Sagar, Dominic Farolino) defining `navigator.modelContext.registerTool()` as a browser-native JS API for exposing web app tools to AI agents with zero server infrastructure; tools execute in page context sharing user auth; browser mediates all calls with security architecture covering tool poisoning, output injection, over-parameterization, and cross-origin leakage. Status: CG-DRAFT with core API defined, service worker background tools and declarative HTML form tools in the roadmap. Discovered Labs has conducted a full technical analysis of the spec and its AEO implications.
+
+- [Discovered Labs: Agentic Browsing Checker](https://discoveredlabs.com/tools/agentic-browsing-checker) - Free tool. Runs 19 checks across the OPERABLE framework covering WebMCP tool registration, form annotation coverage, accessibility tree quality, tool schema JSON validity, llms.txt content validation, risky auto-submit detection, ARIA live region coverage, button keyboard operability, and AI crawler robots.txt access; uses Puppeteer, Lighthouse, and WebMCP W3C draft compliance testing to deliver a scored report by email in 45–90 seconds.
+
+- [GPTBot Crawled 60,000 Pages 30,000+ Times in 12 Hours](https://metehan.ai/blog/i-built-a-60-000-page-ai-website-for-10-gptbot-crawled-it-30-000-times-in-12-hours) - Controlled experiment documenting GPTBot's 470x higher crawl volume versus Googlebot on a brand-new domain: 29,000+ requests within 12 hours at ~1 req/sec with zero backlinks or authority signals; confirms AI crawlers operate on an independent discovery and crawl budget entirely disconnected from traditional search signals.
+
+- [Crawling 65,000 Pages via HTTP Headers](https://metehan.ai/blog/http-headers-internal-links) - Encoding link graphs and heading hierarchies as base64url JSON in custom response headers (`X-Internal-Links`, `X-Headings`) delivers 8.6x faster crawl speeds with edge caching and no HTML parsing; found 41.9% of pages were orphaned - unreachable by agent navigation - a structural issue agentic site audits should check before any content-level optimization.
+
+- [Discovered Labs: AI Assist Widget](https://discoveredlabs.com/tools/ai-assist-widget) - Free tool. Single script tag (<5KB minified, zero external dependencies, CSS scoped with unique IDs) that adds a floating bar of buttons opening ChatGPT, Claude, Perplexity, Grok, or Gemini in a new tab with the current page URL pre-filled in the prompt; configurable engine selection, position, colors, labels, and default prompt; no tracking, analytics, or external requests; the lightweight implementation for increasing content exposure to AI agents without modifying page architecture.
+
+- [agentic-seo](https://github.com/addyosmani/agentic-seo) - JavaScript, 244 stars. AEO audit CLI specifically designed for agentic contexts with 10 checks across five categories including a Token Economics category that directly addresses the per-token cost to an agent of parsing your content; scaffolds missing AEO infrastructure files including AGENTS.md, skill.md, and llms.txt.
+
+- [agent-seo](https://github.com/pontiggia/agent-seo) - TypeScript. Middleware that detects 17+ AI crawler user agents including GPTBot and ClaudeBot and serves clean Markdown instead of HTML, with adapters for Next.js, Express, Fastify, and Hono as the server-side content negotiation layer for frameworks wanting to serve optimally structured content to AI agents.
+
+- [dualmark](https://github.com/dodopayments/dualmark) - TypeScript, 91 stars, Apache 2.0 with patent grant. Dual-serves clean Markdown to AI bots and polished HTML to humans from the same URL via HTTP content negotiation, with six framework adapters (Next.js, Astro, SvelteKit, Cloudflare Workers, Deno Deploy, Vercel Edge), CLI conformance scoring, and automatic llms.txt generation.
+
+- [MCP vs RAG vs NLWeb vs HTML](https://arxiv.org/abs/2511.23281) - The architectural decision guide for how to expose content to agents, establishing that RAG-compatible APIs and semantic data feeds outperform plain HTML for AI agent discoverability on both accuracy and efficiency dimensions.
+
+- [EcoGEO: Trajectory-Aware Evidence Ecosystems](https://arxiv.org/abs/2605.12887) - The most advanced concept in this section: trajectory-aware coordination of navigation and support pages to guide agent browsing trajectories, relevant for large content operations thinking about site architecture from an agent navigation perspective rather than per-page optimization.
+
+---
+
+## Prompt Engineering for AI Visibility
+
+How to think about prompts for both sides of the AEO equation: the queries AI engines internally generate (which your content must match) and the prompts driving automated GEO optimization pipelines.
+
+- [DAIR.AI Prompt Engineering Guide](https://www.promptingguide.ai) - Elvis Saravia's comprehensive open guide covering prompting techniques, RAG architectures, chain-of-thought, agentic patterns, and LLM evaluation methodology; the practical engineering reference for designing prompts that drive automated content optimization loops and AI visibility measurement pipelines reliably.
+
+- [LiveBrowseComp: Are Search Agents Searching, or Just Verifying?](https://arxiv.org/abs/2605.28721) - Establishes that optimizing for the language a model would naturally use to query your subject area matters as much as keyword targeting, because ~45% of agent queries are internally generated from model hypotheses rather than derived from retrieved evidence.
+
+- [MAGEO: Multi-Agent GEO via Reusable Strategy Learning](https://arxiv.org/abs/2604.19516) - Engine-specific and query-type-specific prompt strategies are necessary; MAGEO's preference modeling is the research basis for why single-strategy prompt optimization systematically fails across Gemini, ChatGPT, and Perplexity - what lifts citation on one engine can suppress it on another.
+
+- [FeatGEO: Feature-Level Multi-Objective Optimization](https://arxiv.org/abs/2604.19113) - Demonstrates that planning structural, content, and linguistic feature configurations before generating text - rather than editing post hoc - produces stronger citation improvement because document-level properties influence citation behavior more strongly than token-level edits.
+
+- [Iterate Until Retrieved: Factual Nugget Optimization](https://arxiv.org/abs/2605.25641) - Iterative optimization of entry format and phrasing substantially improves discoverability in production RAG pipelines even when semantic content is correct, establishing that the framing of a factual claim determines whether it is retrieved, not just its information content.
+
+- [Discovered Labs: Reddit Threads Finder](https://discoveredlabs.com/tools/reddit-threads-finder) - Free tool. Identifies which Reddit threads are currently cited in ChatGPT and Gemini responses for a given domain with opportunity and relevance scoring; the output directly informs which community language patterns and framing structures to incorporate into owned content to match AI engine citation preferences.
+
+- [Uncertainty-Aware Web-Conditioned Fact-Checking](https://arxiv.org/abs/2604.11036) - Provides the framework for identifying what to write about, not just how to write it: target atomic claims where LLMs have training gaps, because those are where live-web retrieval is guaranteed and citation opportunity is highest.
+
+---
+
+## Continuous Learning & Future Optimization Surfaces
+
+Emerging surfaces and long-horizon opportunities. These are not fully operational optimization channels yet, but engineers designing systems now should account for them.
+
+- [Discovered Labs: AI Visibility Tracker](https://discoveredlabs.com/technology/ai-visibility-tracker) - Managed monitoring platform testing real buyer questions sourced from Google Search Console, support tickets, call transcripts, and subreddits across ChatGPT, Claude, Perplexity, Google AI Overviews, and Gemini every five days; tracks citation rate, mention rate, average ranking position, share of voice, citation source breakdown (Reddit, reviews, YouTube, blogs), brand perception scoring, and competitor benchmarking; statistically rigorous - each prompt runs multiple times with 95% credible intervals and movements only register after three consecutive significant runs; the production monitoring layer for teams running continuous agentic AEO loops.
+
+- [ALAS: Autonomous Learning Agent for Self-Updating Language Models](https://arxiv.org/abs/2508.15805) - Demonstrates an autonomous pipeline continuously fine-tuning LLMs on post-cutoff web content with citations, raising post-cutoff accuracy from 15% to 90% on evolving topics; appearing as a cited source in continuous-learning pipelines - not just live search retrieval - is an emerging optimization surface where high-quality, stable, citable content gets embedded into model weights over time.
+
+- [Retrieval Collapses When AI Pollutes the Web](https://arxiv.org/abs/2602.16136) - With 67% synthetic content in a retrieval pool, over 80% of surfaced results become AI-generated while measured accuracy stays flat; original human-authored content with unique provenance signals becomes increasingly scarce and therefore more likely to be prioritized by quality-aware rankers that penalize synthetic homogeneity.
+
+- [Prism-Reranker](https://arxiv.org/abs/2604.23734) - Next-generation rerankers assessing contribution and extracting evidence passages represent the reranking evolution to design for: content that explicitly articulates its unique value - not just its topic coverage - will be systematically preferred over topic-matching content that makes no distinct contribution claim.
+
+- [EcoGEO: Trajectory-Aware Evidence Ecosystems](https://arxiv.org/abs/2605.12887) - Site architecture designed for agent navigation patterns - not just human usability or traditional crawl efficiency - is an optimization surface with no equivalent in traditional SEO; trajectory-aware coordination of navigation and support pages is the earliest production-ready framework for environment-level agentic optimization.
+
+- [SearchLLM: Aligning LLMs with Searcher Preferences](https://arxiv.org/abs/2603.10473) - Multi-dimensional reward modeling (accuracy, comprehensiveness, engagement) deployed at scale on RedNote shows that generative search engines are simultaneously optimizing across multiple quality dimensions, meaning content ranked well on all three will be systematically preferred over content maximizing any single signal.
+
+---
+
+## Related Lists
+
+- [awesome-aeo-seo](https://github.com/discoveredlabs/awesome-aeo-seo) - Flagship list covering AEO, GEO, and SEO foundations, architecture, research, measurement, and content strategy.
+- [awesome-aeo-seo-tools](https://github.com/discoveredlabs/awesome-aeo-seo-tools) - Free and open-source tools for AEO auditing, monitoring, technical configuration, and content evaluation.
+
+---
+
+## License
+
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) - Discovered Labs, 2026. To the extent possible under law, the contributors have waived all copyright and related rights to this work.
