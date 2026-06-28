@@ -97,6 +97,8 @@ MCP servers exposing SEO and AI visibility data to AI coding assistants and agen
 
 - [seo-mcp](https://github.com/cnych/seo-mcp) - Python, 248 stars. Free MCP powered by Ahrefs public data for backlink analysis, keyword ideas, traffic estimation, and domain metrics, with automatic CAPTCHA solving and response caching requiring no paid API key for the free tier.
 
+- [LLM Pulse](https://llmpulse.ai) - Hosted MCP server (and REST API) exposing AI search visibility data: brand mentions, citations, share of voice and AI-referred traffic across ChatGPT, Perplexity, Gemini and Google AI Overviews, for use in agent pipelines.
+
 - [dataseo-mcp](https://github.com/egebese/dataseo-mcp) - Python, 184 stars. Ahrefs data APIs via MCP for keyword research, backlink analysis, competitor insights, and SERP data; designed to compose with OpenRouter for multi-step query planning in agent workflows.
 
 - [mcp-gsc](https://github.com/AminForou/mcp-gsc) - Python. Google Search Console MCP compatible with Claude Desktop, Cursor, Codex CLI, Gemini CLI, and any MCP-compatible client, surfacing keyword rankings, CTR trends, coverage issues, and AI Overview visibility signals in natural language.
