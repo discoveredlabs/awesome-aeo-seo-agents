@@ -111,6 +111,8 @@ MCP servers exposing SEO and AI visibility data to AI coding assistants and agen
 
 - [mcp-seo-marketing](https://github.com/ezbiz-services/mcp-seo-marketing) - TypeScript. AI-powered SEO and marketing intelligence MCP covering keyword research, SERP analysis, backlink checking, and on-page signals including keyword density, readability, structure, and meta tags.
 
+- [NotFair](https://github.com/nowork-studio/NotFair) - TypeScript, 3K stars. Bundles Google Search Console, GA4, Google Ads, and Meta Ads MCP servers alongside Claude Code SEO/GEO skills; the only entry here exposing paid-media (Google Ads, Meta Ads) account data via MCP, enabling optimization loops that join organic-search signals with ad-account performance. (Also listed in [awesome-aeo-seo-tools](https://github.com/discoveredlabs/awesome-aeo-seo-tools) under Agent Skill Packages.)
+
 **Note:** Discovered Labs maintains an internal MCP server available inside Claude Desktop and Cursor for AEO-specific workflows - prompt hygiene checks, citation auditing, Reddit opportunity scoring, and live engine querying. No public repository.
 
 ---
