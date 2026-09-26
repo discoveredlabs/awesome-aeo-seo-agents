@@ -114,6 +114,7 @@ MCP servers exposing SEO and AI visibility data to AI coding assistants and agen
 **Note:** Discovered Labs maintains an internal MCP server available inside Claude Desktop and Cursor for AEO-specific workflows - prompt hygiene checks, citation auditing, Reddit opportunity scoring, and live engine querying. No public repository.
 
 ---
+- [statsnet-mcp](https://github.com/usenetstate/statsnet-mcp) - Remote MCP for worldwide company background checks (registration, executives, courts, finances); useful for brand/entity verification in AEO workflows. Remote: `https://statsnet.co/mcp`.
 
 ## Agent Skill Frameworks
 
