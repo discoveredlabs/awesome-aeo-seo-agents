@@ -183,6 +183,8 @@ Configuring sites so AI agents can effectively navigate, parse, and use content.
 
 - [EcoGEO: Trajectory-Aware Evidence Ecosystems](https://arxiv.org/abs/2605.12887) - The most advanced concept in this section: trajectory-aware coordination of navigation and support pages to guide agent browsing trajectories, relevant for large content operations thinking about site architecture from an agent navigation perspective rather than per-page optimization.
 
+- [listaihub-client](https://github.com/romangrid/listaihub-client) - Python client SDK and CLI for [ListAIHub](https://listaihub.com/en/developers) enabling autonomous AI agents to query tool metadata, programmatic stacks, and submit applications via authenticated Token API with OpenAPI 3.0 integration.
+
 ---
 
 ## Prompt Engineering for AI Visibility
