@@ -113,6 +113,8 @@ MCP servers exposing SEO and AI visibility data to AI coding assistants and agen
 
 **Note:** Discovered Labs maintains an internal MCP server available inside Claude Desktop and Cursor for AEO-specific workflows - prompt hygiene checks, citation auditing, Reddit opportunity scoring, and live engine querying. No public repository.
 
+- [AgentSEO MCP](https://github.com/AgentSEO-dev/agentseo-clients) — TypeScript, 0 stars, MIT. Gives agents structured SERP data, keyword metrics, rank tracking, and Google AI Overview signals for SEO and AEO workflows through an API-key-authenticated MCP server.
+
 ---
 
 ## Agent Skill Frameworks
