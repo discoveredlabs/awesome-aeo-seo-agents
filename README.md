@@ -111,6 +111,8 @@ MCP servers exposing SEO and AI visibility data to AI coding assistants and agen
 
 - [mcp-seo-marketing](https://github.com/ezbiz-services/mcp-seo-marketing) - TypeScript. AI-powered SEO and marketing intelligence MCP covering keyword research, SERP analysis, backlink checking, and on-page signals including keyword density, readability, structure, and meta tags.
 
+- [FlashData](https://github.com/rocosen/flashdata-mcp) - Python, 0 stars, MIT. Supplies agent research pipelines with Google Search, News, Images, Shopping, Videos and Places plus YouTube search, extended search, metadata, transcripts, captions, channels and autocomplete through an MCP interface requiring an API key and paid FlashData Credits.
+
 **Note:** Discovered Labs maintains an internal MCP server available inside Claude Desktop and Cursor for AEO-specific workflows - prompt hygiene checks, citation auditing, Reddit opportunity scoring, and live engine querying. No public repository.
 
 ---
