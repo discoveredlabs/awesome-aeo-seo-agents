@@ -133,6 +133,8 @@ Pre-built skill packages installable into AI coding assistants for SEO and GEO c
 
 - [web-analytics-agent-skill](https://github.com/SeoToolkit/web-analytics-agent-skill) - Python, 19 stars. Connects GSC, GA4, and Bing Webmaster APIs directly to Claude Code and compatible agents, surfacing keyword performance, crawl errors, click data, and analytics metrics in natural language as an essential data-layer skill for any automated SEO workflow.
 
+- [seo-agent-skills](https://github.com/akootahq/seo-agent-skills) - TypeScript/Markdown, MIT. Eight SEO and AEO/GEO skills for Claude Code, Codex and Cursor built around a close-the-loop model: each audit finding is opened as a pull request in the site's own framework code and re-verified on the live site (pass/fail per fix), and with an Agent Number 10 connection the skills sample real ChatGPT, Perplexity, Gemini and Google AI Overviews answers before and after a change, using citation change as the success signal rather than a predicted likelihood score.
+
 ---
 
 ## Content Generation & Research Automation
